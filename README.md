@@ -42,7 +42,7 @@ app/controller/test_controller.rb
         u = User.find(params[:id])
         #be extremely carefull about what parameters do you pass to work in background, because they are not sanitized
         Launchbg.start("rake calculateVeryLargeTaskForUser[#{u.id}]")
-        #launchbg returns inmediatelly and the output can not be captured on the controller
+        #launchbg returns immediately and the output can not be captured on the controller
     end
 
 
