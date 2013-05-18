@@ -20,7 +20,31 @@ Or install it yourself as:
 
 To use in production environment with heroku you must config the environment variable HEROKU_APP to the name of your application on heroku:
 
-heroku config:set HEROKU_APP=my_app_name
+`heroku config:set HEROKU_APP=my_app_name`
+
+Example case of use:
+
+lib/task/rake/works.rake:
+
+    def veryLargeJobForUser => [:user_id, :environment] do |t,args|
+        user = User.find(user_id)
+        #sleep 600
+        #.... do a very large task ...
+        #.... and then notify the user that the job has finished...
+        Mailer.job_finish(user)
+    end
+
+    
+
+app/controller/test_controller.rb
+
+    def test
+        u = User.find(params[:id])
+        #be extremely carefull about what parameters do you pass to work in background, because they are not sanitized
+        Launchbg.start("rake calculateVeryLargeTaskForUser[#{u.id}]")
+        #launchbg returns inmediatelly and the output can not be captured on the controller
+    end
+
 
 ## Contributing
 
