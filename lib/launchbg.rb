@@ -6,7 +6,6 @@ module Launchbg
       heroku = Heroku::API.new
       heroku.post_ps(ENV['HEROKU_APP'],cmd)
     else
-      options[:rails_env] ||= Rails.env
       system "#{cmd} 2>&1 >> #{Rails.root}/log/launchbg.log &"
     end
   end
