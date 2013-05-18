@@ -1,12 +1,12 @@
 # Launchbg
 
-TODO: Write a gem description
+Permite iniciar commando del sistema operativo en background y retorna inmediatamente. Si Rails.env.production? entonces utiliza Heroku::API para iniciar un "one-off dyno" para procesar el trabajo
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'launchbg'
+    gem 'launchbg', :git => "git://github.com:mabahamo/launchbg.git"
 
 And then execute:
 
@@ -18,7 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use in production environment with heroku you must config the environment variable HEROKU_APP to the name of your application on heroku:
+
+heroku config:set HEROKU_APP=my_app_name
 
 ## Contributing
 
