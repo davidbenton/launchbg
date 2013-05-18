@@ -6,7 +6,7 @@ Permite iniciar commando del sistema operativo en background y retorna inmediata
 
 Add this line to your application's Gemfile:
 
-    `gem 'launchbg'`
+    gem 'launchbg'
 
 And then execute:
 
