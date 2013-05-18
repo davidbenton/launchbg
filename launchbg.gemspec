@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["manuel@bahamondez.com"]
   spec.description   = %q{Permite iniciar commando del sistema operativo en background y retorna inmediatamente. Si Rails.env.production? entonces utiliza Heroku::API para iniciar un "one-off dyno" para procesar el trabajo}
   spec.summary       = %q{Permite iniciar commando del sistema operativo en background}
-  spec.homepage      = "http://www.b9.cl"
+  spec.homepage      = "https://github.com/mabahamo/launchbg"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
