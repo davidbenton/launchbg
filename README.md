@@ -1,6 +1,6 @@
 # Launchbg
 
-Permite iniciar commando del sistema operativo en background y retorna inmediatamente. Si Rails.env.production? entonces utiliza Heroku::API para iniciar un "one-off dyno" para procesar el trabajo
+Permite iniciar commando del sistema operativo en background y retorna inmediatamente. Si Rails.env.production? es verdadero entonces utiliza Heroku::API para iniciar un "one-off dyno" para procesar el trabajo
 
 ## Installation
 
