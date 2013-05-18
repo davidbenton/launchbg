@@ -26,8 +26,9 @@ Example case of use:
 
 lib/task/rake/works.rake:
 
-    def veryLargeJobForUser => [:user_id, :environment] do |t,args|
-        user = User.find(user_id)
+    desc "a very large job to process for a user"
+    task :veryLargeJobForUser, [:user_id] => [:environment] do |t,args|
+        user = User.find(args[:user_id])
         #sleep 600
         #.... do a very large task ...
         #.... and then notify the user that the job has finished...
@@ -41,7 +42,7 @@ app/controller/test_controller.rb
     def test
         u = User.find(params[:id])
         #be extremely carefull about what parameters do you pass to work in background, because they are not sanitized
-        Launchbg.start("rake calculateVeryLargeTaskForUser[#{u.id}]")
+        Launchbg.start("rake veryLargeJobForUser[#{u.id}]")
         #launchbg returns immediately and the output can not be captured on the controller
     end
 
