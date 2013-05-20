@@ -18,9 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-To use in production environment with heroku you must config the environment variable HEROKU_APP to the name of your application on heroku:
+To use in production environment with heroku you must config the environment variable HEROKU_APP to the name of your application on heroku and your HEROKU_API to _YOUR_ api key:
 
-`heroku config:set HEROKU_APP=my_app_name`
+`heroku config:set HEROKU_APP=my_app_name HEROKU_API=133b0e511cbbfa8726132bec3279c11e2d41eaf9`
 
 Example case of use:
 
